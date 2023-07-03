@@ -1,0 +1,9 @@
+summary {
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+
+  &::-webkit-details-marker {
+    @apply hidden;
+  }
+}

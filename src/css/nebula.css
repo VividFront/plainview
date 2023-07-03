@@ -1,0 +1,284 @@
+/* stylelint-disable scss/at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root,
+  ::before,
+  ::after {
+    --vf-font-size-root: 16;
+
+    --vf-font-size-display: calc(44rem / var(--vf-font-size-root));
+    --vf-font-size-h1: calc(40rem / var(--vf-font-size-root));
+    --vf-font-size-h2: calc(32rem / var(--vf-font-size-root));
+    --vf-font-size-h3: calc(20rem / var(--vf-font-size-root));
+    --vf-font-size-h4: calc(18rem / var(--vf-font-size-root));
+    --vf-font-size-h5: calc(17rem / var(--vf-font-size-root));
+    --vf-font-size-h6: calc(16rem / var(--vf-font-size-root));
+    --vf-font-size-body-copy: calc(15rem / var(--vf-font-size-root));
+    --vf-font-size-body-copy-small: calc(13rem / var(--vf-font-size-root));
+    --vf-font-size-body-copy-large: calc(16rem / var(--vf-font-size-root));
+    --vf-font-size-nav: calc(18rem / var(--vf-font-size-root));
+
+    --vf-line-height-display: calc(48rem / var(--vf-font-size-root));
+    --vf-line-height-h1: calc(44rem / var(--vf-font-size-root));
+    --vf-line-height-h2: calc(36rem / var(--vf-font-size-root));
+    --vf-line-height-h3: calc(26rem / var(--vf-font-size-root));
+    --vf-line-height-h4: calc(24rem / var(--vf-font-size-root));
+    --vf-line-height-h5: calc(24rem / var(--vf-font-size-root));
+    --vf-line-height-h6: calc(24rem / var(--vf-font-size-root));
+    --vf-line-height-body-copy: calc(22rem / var(--vf-font-size-root));
+    --vf-line-height-body-copy-small: calc(18rem / var(--vf-font-size-root));
+    --vf-line-height-body-copy-large: calc(24rem / var(--vf-font-size-root));
+    --vf-line-height-nav: calc(24rem / var(--vf-font-size-root));
+
+    --vf-font-family-display: 'playfair-display', Times, serif;
+    --vf-font-family-heading: 'Quasimoda', Helvetica, sans-serif;
+    --vf-font-family-body: 'Quasimoda', Helvetica, sans-serif;
+    --vf-font-family-sans: 'Open Sans', Helvetica, sans-serif;
+
+    --vf-color-primary: 0 0 0;
+    --vf-color-primary-hover: 44 44 44;
+    --vf-color-primary-pressed: 23 23 23;
+    --vf-color-secondary: 249 230 238;
+    --vf-color-secondary-hover: 255 247 250;
+    --vf-color-secondary-pressed: 248 221 233;
+    --vf-color-ui-background: 247 247 247;
+    --vf-color-input-background: 253 253 253;
+    --vf-color-border: 193 193 194;
+    --vf-color-disabled: 222 222 222;
+    --vf-color-disabled-high-contrast: 148 148 148;
+    --vf-color-placeholder-high-contrast: 115 115 115;
+    --vf-color-error: 205 32 38;
+    --vf-color-warning: 249 198 66;
+    --vf-color-success: 41 168 37;
+    --vf-color-error-background: 250 233 233;
+    --vf-color-warning-background: 254 249 236;
+    --vf-color-success-background: 234 246 233;
+    --vf-color-copy: 51 51 51;
+    --vf-color-header: 51 51 51;
+    --vf-color-copy-light: 180 180 180;
+
+    /* Brand Colors */
+    --vf-color-facebook: 60 88 152;
+    --vf-color-twitter: 28 162 241;
+    --vf-color-linkedin: 4 119 180;
+    --vf-color-pinterest: 231 0 34;
+    --vf-color-youtube: 255 0 0;
+    --vf-color-snapchat: 255 252 0;
+    --vf-color-instagram: 255 0 118;
+
+    --vf-padding-section-xsmall: calc(12rem / var(--vf-font-size-root)) 0;
+    --vf-padding-section-small: calc(32rem / var(--vf-font-size-root)) 0
+      calc(40rem / var(--vf-font-size-root));
+    --vf-padding-section-medium: calc(40rem / var(--vf-font-size-root)) 0
+      calc(48rem / var(--vf-font-size-root));
+    --vf-padding-section-large: calc(56rem / var(--vf-font-size-root)) 0
+      calc(64rem / var(--vf-font-size-root));
+
+    --vf-checkbox-background: rgb(var(--vf-color-input-background))
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 512 512'%3E%3Cpath fill='currentColor' d='m173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69L432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z'/%3E%3C/svg%3E")
+      center / 0.625em no-repeat;
+    --vf-radio-background: rgb(var(--vf-color-input-background))
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 16 16'%3E%3Cpath fill='currentColor' fill-rule='evenodd' d='M8 13A5 5 0 1 0 8 3a5 5 0 0 0 0 10z'/%3E%3C/svg%3E")
+      center / 1em no-repeat;
+
+    --vf-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+
+    /* Border */
+    --vf-border-radius: 4px;
+
+    /* Grid */
+    --vf-grid-cols-default: repeat(6, minmax(0, 1fr));
+    --vf-grid-gap: 16px;
+
+    --vf-container-width: 100%;
+  }
+
+  @media screen(sm) {
+    :root,
+    ::before,
+    ::after {
+      --vf-container-width: 576px;
+    }
+  }
+
+  @media screen(md) {
+    :root,
+    ::before,
+    ::after {
+      --vf-container-width: 768px;
+    }
+  }
+
+  @media screen(lg) {
+    :root,
+    ::before,
+    ::after {
+      --vf-font-size-display: calc(72rem / var(--vf-font-size-root));
+      --vf-font-size-h1: calc(56rem / var(--vf-font-size-root));
+      --vf-font-size-h2: calc(44rem / var(--vf-font-size-root));
+      --vf-font-size-h3: calc(32rem / var(--vf-font-size-root));
+      --vf-font-size-h4: calc(24rem / var(--vf-font-size-root));
+      --vf-font-size-h5: calc(20rem / var(--vf-font-size-root));
+      --vf-font-size-h6: calc(18rem / var(--vf-font-size-root));
+      --vf-font-size-body-copy: calc(16rem / var(--vf-font-size-root));
+      --vf-font-size-body-copy-small: calc(14rem / var(--vf-font-size-root));
+      --vf-font-size-body-copy-large: calc(18rem / var(--vf-font-size-root));
+
+      --vf-line-height-display: calc(68rem / var(--vf-font-size-root));
+      --vf-line-height-h1: calc(64rem / var(--vf-font-size-root));
+      --vf-line-height-h2: calc(48rem / var(--vf-font-size-root));
+      --vf-line-height-h3: calc(38rem / var(--vf-font-size-root));
+      --vf-line-height-h4: calc(29rem / var(--vf-font-size-root));
+      --vf-line-height-h5: calc(28rem / var(--vf-font-size-root));
+      --vf-line-height-h6: calc(26rem / var(--vf-font-size-root));
+      --vf-line-height-body-copy: calc(24rem / var(--vf-font-size-root));
+      --vf-line-height-body-copy-small: calc(24rem / var(--vf-font-size-root));
+      --vf-line-height-body-copy-large: calc(28rem / var(--vf-font-size-root));
+
+      --vf-padding-section-xsmall: calc(16rem / var(--vf-font-size-root)) 0;
+      --vf-padding-section-small: calc(48rem / var(--vf-font-size-root)) 0
+        calc(56rem / var(--vf-font-size-root));
+      --vf-padding-section-medium: calc(64rem / var(--vf-font-size-root)) 0
+        calc(72rem / var(--vf-font-size-root));
+      --vf-padding-section-large: calc(96rem / var(--vf-font-size-root)) 0
+        calc(104rem / var(--vf-font-size-root));
+
+      /* Grid */
+      --vf-grid-cols-default: repeat(12, minmax(0, 1fr));
+      --vf-grid-gap: 32px;
+
+      --vf-container-width: 992px;
+    }
+  }
+
+  @media screen(xl) {
+    :root,
+    ::before,
+    ::after {
+      --vf-container-width: 1200px;
+    }
+  }
+
+  @media screen(2xl) {
+    :root,
+    ::before,
+    ::after {
+      --vf-container-width: 1536px;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-size: var(--vf-font-size-body-copy);
+    line-height: var(--vf-line-height-body-copy);
+    font-family: var(--vf-font-family-body);
+    color: rgb(var(--vf-color-copy));
+  }
+
+  h1,
+  .h1 {
+    font-size: var(--vf-font-size-h1);
+    line-height: var(--vf-line-height-h1);
+  }
+
+  h2,
+  .h2 {
+    font-size: var(--vf-font-size-h2);
+    line-height: var(--vf-line-height-h2);
+  }
+
+  h3,
+  .h3 {
+    font-size: var(--vf-font-size-h3);
+    line-height: var(--vf-line-height-h3);
+  }
+
+  h4,
+  .h4 {
+    font-size: var(--vf-font-size-h4);
+    line-height: var(--vf-line-height-h4);
+  }
+
+  h5,
+  .h5 {
+    font-size: var(--vf-font-size-h5);
+    line-height: var(--vf-line-height-h5);
+  }
+
+  h6,
+  .h6 {
+    font-size: var(--vf-font-size-h6);
+    line-height: var(--vf-line-height-h6);
+  }
+
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    font-family: var(--vf-font-family-heading);
+    font-weight: 700;
+  }
+
+  select:enabled {
+    --vf-select-background: rgb(var(--vf-color-input-background))
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 16 16'%3E%3Cpath fill='currentColor' fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E")
+      calc(100% + 1em - (24rem / var(--vf-font-size-root)) - 0.5em) center / 1em
+      no-repeat;
+  }
+
+  select:disabled {
+    --vf-select-background: rgb(var(--vf-color-disabled))
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 16 16'%3E%3Cpath fill='currentColor' fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E")
+      calc(100% + 1em - (24rem / var(--vf-font-size-root)) - 0.5em) center / 1em
+      no-repeat;
+  }
+
+  select {
+    background: var(--vf-select-background);
+    @apply appearance-none;
+  }
+
+  [type='range'] {
+    --vf-range-background: transparent
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='21.5' fill='white' stroke='%23c1c1c1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      center / 100% no-repeat;
+  }
+
+  [type='range']:disabled {
+    --vf-range-background: transparent
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='21.5' fill='%23dedede' stroke='%23949494' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      center / 100% no-repeat;
+  }
+
+  [type='checkbox'] {
+    --vf-toggle-background: rgb(var(--vf-color-disabled-high-contrast))
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8' fill='white'/%3E%3C/svg%3E")
+      left 1px center / 1.375em no-repeat;
+  }
+
+  [type='checkbox']:checked {
+    --vf-toggle-background: rgb(var(--vf-color-primary))
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8' fill='white'/%3E%3C/svg%3E")
+      right 1px center / 1.375em no-repeat;
+  }
+
+  [type='checkbox']:disabled {
+    --vf-toggle-background: rgb(var(--vf-color-disabled-high-contrast))
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8' fill='%23dedede'/%3E%3C/svg%3E")
+      left 1px center / 1.375em no-repeat;
+  }
+}
