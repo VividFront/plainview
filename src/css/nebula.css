@@ -7,7 +7,7 @@
   :root,
   ::before,
   ::after {
-    --vf-font-size-root: 16;
+    --vf-font-size-root: 10;
 
     --vf-font-size-display: calc(44rem / var(--vf-font-size-root));
     --vf-font-size-h1: calc(40rem / var(--vf-font-size-root));

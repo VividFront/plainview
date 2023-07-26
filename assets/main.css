@@ -474,7 +474,7 @@ video {
 :root,
   ::before,
   ::after {
-    --vf-font-size-root: 16;
+    --vf-font-size-root: 10;
 
     --vf-font-size-display: calc(44rem / var(--vf-font-size-root));
     --vf-font-size-h1: calc(40rem / var(--vf-font-size-root));
@@ -635,9 +635,9 @@ html {
     scroll-behavior: smooth;
   }
 body {
-    font-size: calc(15rem / 16);
+    font-size: calc(15rem / 10);
     font-size: var(--vf-font-size-body-copy);
-    line-height: calc(22rem / 16);
+    line-height: calc(22rem / 10);
     line-height: var(--vf-line-height-body-copy);
     font-family: 'Quasimoda', Helvetica, sans-serif;
     font-family: var(--vf-font-family-body);
@@ -646,44 +646,44 @@ body {
   }
 h1,
   .h1 {
-    font-size: calc(40rem / 16);
+    font-size: calc(40rem / 10);
     font-size: var(--vf-font-size-h1);
-    line-height: calc(44rem / 16);
+    line-height: calc(44rem / 10);
     line-height: var(--vf-line-height-h1);
   }
 h2,
   .h2 {
-    font-size: calc(32rem / 16);
+    font-size: calc(32rem / 10);
     font-size: var(--vf-font-size-h2);
-    line-height: calc(36rem / 16);
+    line-height: calc(36rem / 10);
     line-height: var(--vf-line-height-h2);
   }
 h3,
   .h3 {
-    font-size: calc(20rem / 16);
+    font-size: calc(20rem / 10);
     font-size: var(--vf-font-size-h3);
-    line-height: calc(26rem / 16);
+    line-height: calc(26rem / 10);
     line-height: var(--vf-line-height-h3);
   }
 h4,
   .h4 {
-    font-size: calc(18rem / 16);
+    font-size: calc(18rem / 10);
     font-size: var(--vf-font-size-h4);
-    line-height: calc(24rem / 16);
+    line-height: calc(24rem / 10);
     line-height: var(--vf-line-height-h4);
   }
 h5,
   .h5 {
-    font-size: calc(17rem / 16);
+    font-size: calc(17rem / 10);
     font-size: var(--vf-font-size-h5);
-    line-height: calc(24rem / 16);
+    line-height: calc(24rem / 10);
     line-height: var(--vf-line-height-h5);
   }
 h6,
   .h6 {
-    font-size: calc(16rem / 16);
+    font-size: calc(16rem / 10);
     font-size: var(--vf-font-size-h6);
-    line-height: calc(24rem / 16);
+    line-height: calc(24rem / 10);
     line-height: var(--vf-line-height-h6);
   }
 h1,
@@ -924,14 +924,49 @@ select {
     max-width: 1536px;
   }
 }
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
 .sticky {
   position: sticky;
+}
+.bottom-12 {
+  bottom: calc(12rem / 10);
+  bottom: calc(12rem / var(--vf-font-size-root));
+}
+.left-0 {
+  left: 0px;
+}
+.left-12 {
+  left: calc(12rem / 10);
+  left: calc(12rem / var(--vf-font-size-root));
+}
+.top-0 {
+  top: 0px;
 }
 .isolate {
   isolation: isolate;
 }
+.mb-8 {
+  margin-bottom: calc(8rem / 10);
+  margin-bottom: calc(8rem / var(--vf-font-size-root));
+}
+.mt-20 {
+  margin-top: calc(20rem / 10);
+  margin-top: calc(20rem / var(--vf-font-size-root));
+}
+.mt-8 {
+  margin-top: calc(8rem / 10);
+  margin-top: calc(8rem / var(--vf-font-size-root));
+}
 .block {
   display: block;
+}
+.inline-block {
+  display: inline-block;
 }
 .flex {
   display: -webkit-box;
@@ -947,18 +982,114 @@ select {
 .hidden {
   display: none;
 }
+.aspect-\[4\/3\] {
+  aspect-ratio: 4/3;
+}
+.h-full {
+  height: 100%;
+}
+.w-full {
+  width: 100%;
+}
 .transform {
   -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
           transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.grid-cols {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: var(--vf-grid-cols-default);
 }
 .flex-wrap {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
+.justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.border-\[2px\] {
+  border-width: 2px;
+}
+.border {
+  border-width: 1px;
+}
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgba(255, 255, 255, var(--tw-border-opacity));
+}
+.border-border {
+  --tw-border-opacity: 1;
+  border-color: rgba(193, 193, 194, var(--tw-border-opacity));
+  border-color: rgb(var(--vf-color-border) / var(--tw-border-opacity));
+}
+.border-primary {
+  --tw-border-opacity: 1;
+  border-color: rgba(0, 0, 0, var(--tw-border-opacity));
+  border-color: rgb(var(--vf-color-primary) / var(--tw-border-opacity));
+}
+.bg-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
+  background-color: rgb(var(--vf-color-primary) / var(--tw-bg-opacity));
+}
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.py-24 {
+  padding-top: calc(24rem / 10);
+  padding-top: calc(24rem / var(--vf-font-size-root));
+  padding-bottom: calc(24rem / 10);
+  padding-bottom: calc(24rem / var(--vf-font-size-root));
+}
+.px-20 {
+  padding-left: calc(20rem / 10);
+  padding-left: calc(20rem / var(--vf-font-size-root));
+  padding-right: calc(20rem / 10);
+  padding-right: calc(20rem / var(--vf-font-size-root));
+}
+.py-8 {
+  padding-top: calc(8rem / 10);
+  padding-top: calc(8rem / var(--vf-font-size-root));
+  padding-bottom: calc(8rem / 10);
+  padding-bottom: calc(8rem / var(--vf-font-size-root));
+}
+.text-center {
+  text-align: center;
+}
+.font-display {
+  font-family: 'playfair-display', Times, serif, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: var(--vf-font-family-display), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+.text-body-copy-large {
+  font-size: calc(16rem / 10);
+  font-size: var(--vf-font-size-body-copy-large);
+  line-height: calc(24rem / 10);
+  line-height: var(--vf-line-height-body-copy-large);
+}
+.text-body-copy-small {
+  font-size: calc(13rem / 10);
+  font-size: var(--vf-font-size-body-copy-small);
+  line-height: calc(18rem / 10);
+  line-height: var(--vf-line-height-body-copy-small);
+}
+.text-display {
+  font-size: calc(44rem / 10);
+  font-size: var(--vf-font-size-display);
+  line-height: calc(48rem / 10);
+  line-height: var(--vf-line-height-display);
+}
+.font-normal {
+  font-weight: 400;
+}
+.font-bold {
+  font-weight: 700;
 }
 .uppercase {
   text-transform: uppercase;
@@ -968,6 +1099,20 @@ select {
 }
 .italic {
   font-style: italic;
+}
+.text-copy {
+  --tw-text-opacity: 1;
+  color: rgba(51, 51, 51, var(--tw-text-opacity));
+  color: rgb(var(--vf-color-copy) / var(--tw-text-opacity));
+}
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+.text-primary {
+  --tw-text-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-text-opacity));
+  color: rgb(var(--vf-color-primary) / var(--tw-text-opacity));
 }
 .shadow {
   --tw-shadow: var(--vf-box-shadow);
@@ -1041,6 +1186,9 @@ select {
     height: auto;
     clip: auto;
   }
+.\[display\:none\] {
+  display: none;
+}
 summary {
   cursor: pointer;
   list-style: none;
@@ -1050,15 +1198,15 @@ summary::-webkit-details-marker {
   display: none;
 }
 .shopify-challenge__container {
-  padding: calc(40rem / 16) 0
-      calc(48rem / 16);
+  padding: calc(40rem / 10) 0
+      calc(48rem / 10);
   padding: var(--vf-padding-section-medium);
   text-align: center;
 }
 .shopify-challenge__container input[type=submit] {
   margin-left: auto;
   margin-right: auto;
-  margin-top: calc(24rem / 16);
+  margin-top: calc(24rem / 10);
   margin-top: calc(24rem / var(--vf-font-size-root));
   display: inline-block;
   cursor: pointer;
@@ -1119,7 +1267,7 @@ footer #contact_form {
 .richtext-content h4 + h6,
 .richtext-content h5 + h6,
 .richtext-content h6 + h6 {
-  margin-top: calc(24rem / 16);
+  margin-top: calc(24rem / 10);
   margin-top: calc(24rem / var(--vf-font-size-root));
 }
 .richtext-content h1 + p,
@@ -1140,13 +1288,13 @@ footer #contact_form {
 .richtext-content h4 + ol,
 .richtext-content h5 + ol,
 .richtext-content h6 + ol {
-  margin-top: calc(16rem / 16);
+  margin-top: calc(16rem / 10);
   margin-top: calc(16rem / var(--vf-font-size-root));
 }
 .richtext-content p + p,
 .richtext-content p + ul,
 .richtext-content p + ol {
-  margin-top: calc(12rem / 16);
+  margin-top: calc(12rem / 10);
   margin-top: calc(12rem / var(--vf-font-size-root));
 }
 .richtext-content p + h1,
@@ -1167,7 +1315,7 @@ footer #contact_form {
 .richtext-content ol + h3,
 .richtext-content ol + h4,
 .richtext-content ol + h5 {
-  margin-top: calc(24rem / 16);
+  margin-top: calc(24rem / 10);
   margin-top: calc(24rem / var(--vf-font-size-root));
 }
 .richtext-content li > p {
@@ -1181,7 +1329,7 @@ footer #contact_form {
 }
 .richtext-content ul,
 .richtext-content ol {
-  padding-left: calc(18rem / 16);
+  padding-left: calc(18rem / 10);
   padding-left: calc(18rem / var(--vf-font-size-root));
   list-style-position: outside;
 }
@@ -1189,16 +1337,16 @@ footer #contact_form {
 .richtext-content ol + li,
 .richtext-content ul li + li,
 .richtext-content ol li + li {
-  margin-top: calc(8rem / 16);
+  margin-top: calc(8rem / 10);
   margin-top: calc(8rem / var(--vf-font-size-root));
 }
 .richtext-content ul ul,
 .richtext-content ol ul,
 .richtext-content ul ol,
 .richtext-content ol ol {
-  margin-top: calc(4rem / 16);
+  margin-top: calc(4rem / 10);
   margin-top: calc(4rem / var(--vf-font-size-root));
-  padding-left: calc(16rem / 16);
+  padding-left: calc(16rem / 10);
   padding-left: calc(16rem / var(--vf-font-size-root));
 }
 .richtext-content a:not(.button):not(.swp_share_link) {
@@ -1223,9 +1371,9 @@ footer #contact_form {
   position: absolute;
   left: -16px;
   top: 13px;
-  height: calc(6rem / 16);
+  height: calc(6rem / 10);
   height: calc(6rem / var(--vf-font-size-root));
-  width: calc(6rem / 16);
+  width: calc(6rem / 10);
   width: calc(6rem / var(--vf-font-size-root));
   --tw-translate-y: -50%;
   -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1247,9 +1395,9 @@ footer #contact_form {
   font-style: italic;
 }
 .richtext-content blockquote {
-  margin-top: calc(24rem / 16);
+  margin-top: calc(24rem / 10);
   margin-top: calc(24rem / var(--vf-font-size-root));
-  margin-bottom: calc(24rem / 16);
+  margin-bottom: calc(24rem / 10);
   margin-bottom: calc(24rem / var(--vf-font-size-root));
   border-left-width: 4px;
   --tw-border-opacity: 1;
@@ -1258,11 +1406,81 @@ footer #contact_form {
   --tw-bg-opacity: 1;
   background-color: rgba(247, 247, 247, var(--tw-bg-opacity));
   background-color: rgb(var(--vf-color-ui-background) / var(--tw-bg-opacity));
-  padding: calc(24rem / 16);
+  padding: calc(24rem / 10);
   padding: calc(24rem / var(--vf-font-size-root));
 }
 .richtext-content.-white-links a:not(.button):not(.swp_share_link) {
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
   text-decoration-line: underline;
+}
+@media (min-width: 768px) {
+  .md\:col-start-2 {
+    grid-column-start: 2;
+  }
+  .md\:col-end-6 {
+    grid-column-end: 6;
+  }
+  .md\:block {
+    display: block;
+  }
+  .md\:hidden {
+    display: none;
+  }
+  .md\:aspect-auto {
+    aspect-ratio: auto;
+  }
+}
+@media (min-width: 992px) {
+  .lg\:absolute {
+    position: absolute;
+  }
+  .lg\:left-0 {
+    left: 0px;
+  }
+  .lg\:top-0 {
+    top: 0px;
+  }
+  .lg\:z-\[0\] {
+    z-index: 0;
+  }
+  .lg\:col-start-2 {
+    grid-column-start: 2;
+  }
+  .lg\:col-start-4 {
+    grid-column-start: 4;
+  }
+  .lg\:col-end-10 {
+    grid-column-end: 10;
+  }
+  .lg\:col-end-5 {
+    grid-column-end: 5;
+  }
+  .lg\:col-end-6 {
+    grid-column-end: 6;
+  }
+  .lg\:mt-24 {
+    margin-top: calc(24rem / 10);
+    margin-top: calc(24rem / var(--vf-font-size-root));
+  }
+  .lg\:mt-28 {
+    margin-top: calc(28rem / 10);
+    margin-top: calc(28rem / var(--vf-font-size-root));
+  }
+  .lg\:grid {
+    display: grid;
+  }
+  .lg\:h-full {
+    height: 100%;
+  }
+  .lg\:py-0 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .lg\:pb-\[calc\(108rem\/16\)\] {
+    padding-bottom: calc(108rem / 16);
+  }
+  .lg\:pt-\[calc\(108rem\/16\)\] {
+    padding-top: calc(108rem / 16);
+  }
 }
