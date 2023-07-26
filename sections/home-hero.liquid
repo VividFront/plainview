@@ -1,0 +1,187 @@
+<div class="relative lg:pt-[calc(108rem/16)] lg:pb-[calc(108rem/16)]" style="background-color: {{ section.settings.color | default: '#fff' }}">
+  {% if section.settings.show_breadcrumbs == true %}
+    <div class="lg:absolute lg:left-0 lg:top-0 w-full">
+      {% render 'breadcrumbs' %}
+    </div>
+  {% endif %}
+  <div class="relative lg:absolute left-0 top-0 w-full aspect-[4/3] md:aspect-auto lg:h-full lg:z-[0]">
+    {% if section.settings.image != blank %}
+      {{ section.settings.image | image_url: width: 1500 | image_tag:
+        width: section.settings.image.width,
+        class: 'h-full w-full object-cover [display:none] md:block',
+        sizes: section.settings.image.sizes,
+        widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+        alt: section.settings.image.alt | escape
+      }}
+    {% else %}
+      {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+    {% endif %}
+    {% if section.settings.image_mobile != blank %}
+      {{ section.settings.image_mobile | image_url: width: 1500 | image_tag:
+        width: section.settings.image_mobile.width,
+        class: 'h-full w-full object-cover md:hidden',
+        widths: '375, 550, 750',
+        alt: section.settings.image_mobile.alt | escape
+      }}
+    {% endif %}
+    {% if section.settings.designer_tag != blank %}
+      <span class="absolute bottom-12 left-12 text-body-copy-small {{ section.settings.tag_color }}">{{ section.settings.designer_tag}}</span>
+    {% endif %}
+  </div>
+  <div class="relative container lg:grid grid-cols py-24 lg:py-0">
+    {%- liquid 
+      assign content_col_end = 'lg:col-end-5'
+      assign content_col_start = 'lg:col-start-2'
+      assign text_center = ''
+      assign button_align = ''
+      if section.settings.content_width == 'normal'
+        assign content_col_end = 'lg:col-end-6'
+      endif
+      if section.settings.content_align == 'center'
+        assign content_col_end = 'md:col-end-6 lg:col-end-10'
+        assign content_col_start = 'md:col-start-2 lg:col-start-4'
+        assign text_center = 'text-center'
+        assign button_align = 'flex justify-center'
+      endif
+    -%}
+    <div class="{{ content_col_start }} {{ content_col_end }}">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'subheading' -%}
+            <h6 class="mb-8 {{ text_center }}">{{ block.settings.text }}</h6>
+          {%- when 'heading' -%}
+            <h1 class="text-display font-display font-normal {{ text_center }}">{{ block.settings.text }}</h1>
+          {%- when 'body' -%}
+            <p class="mt-8 lg:mt-24 text-body-copy-large {{ text_center }}">{{ block.settings.text }}</p>
+          {%- when 'cta' -%}
+            <div class="mt-20 lg:mt-28 {{ button_align }}">
+              {%- render 'button', url: block.settings.url, text: block.settings.text -%}
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image (Mobile)"
+    },
+    {
+      "type": "select",
+      "id": "content_width",
+      "label": "Content Width",
+      "options": [
+        {
+          "value": "narrow",
+          "label": "Narrow"
+        },
+        {
+          "value": "normal",
+          "label": "Normal"
+        }
+      ],
+      "default": "narrow"
+    },
+    {
+      "type": "select",
+      "id": "content_align",
+      "label": "Content Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "Show breadcrumbs"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Background Color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Hero Banner",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "name": "Subheading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "body",
+      "name": "Body",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "name": "CTA",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ]
+}
+{% endschema %}
