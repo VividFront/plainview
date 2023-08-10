@@ -1,0 +1,11 @@
+.shopify-challenge__container {
+  @apply p-section-md text-center;
+
+  input[type='submit'] {
+    @apply inline-block text-white bg-primary hover:bg-primary-hover py-[calc(9rem/16)] px-[calc(19rem/16)] rounded font-semibold mx-auto mt-24 cursor-pointer;
+  }
+}
+
+footer #contact_form {
+  scroll-padding-top: calc(300rem / 16);
+}

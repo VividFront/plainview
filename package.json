@@ -1,0 +1,89 @@
+{
+  "name": "plainview",
+  "version": "1.0.0",
+  "description": "[![Build status](https://github.com/shopify/dawn/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Shopify/dawn/actions/workflows/ci.yml?query=branch%3Amain) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?color=informational)](/.github/CONTRIBUTING.md)",
+  "main": "index.js",
+  "config": {
+    "port": "3002"
+  },
+  "scripts": {
+    "build": "webpack",
+    "dev": "concurrently --raw \"npm:webpack:watch\" \"npm:shopify:serve\"",
+    "watch": "npm run dev",
+    "prepare": "husky install",
+    "switch": "npm run shopify:switch",
+    "lint": "eslint --fix --cache --cache-location \"node_modules/.eslintcache\" src/**/*.{js,mjs,cjs} && npm run format && shopify theme check -a",
+    "format": "prettier --write src/**/*",
+    "webpack:watch": "webpack watch",
+    "webpack:build": "webpack --mode production",
+    "shopify:switch": "dotenv cross-var \"shopify switch --store %SHOPIFY_STORE%\"",
+    "shopify:serve": "cross-var shopify theme serve --port %npm_package_config_port%"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:VividFront/plainview.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VividFront/plainview"
+  },
+  "type": "module",
+  "homepage": "https://github.com/VividFront/plainview#readme",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "ie >= 11"
+  ],
+  "devDependencies": {
+    "@swc/core": "^1.2.196",
+    "@tailwindcss/line-clamp": "^0.4.0",
+    "autoprefixer": "^10.4.8",
+    "concurrently": "^7.2.0",
+    "cross-env": "^7.0.3",
+    "cross-var": "^1.1.0",
+    "css-loader": "^6.7.1",
+    "dotenv": "^16.0.0",
+    "dotenv-cli": "^5.1.0",
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": ">=6",
+    "lint-staged": ">=10",
+    "mini-css-extract-plugin": "^2.6.0",
+    "path": "^0.12.7",
+    "postcss": "^8.4.16",
+    "postcss-import": "^14.1.0",
+    "postcss-loader": "^7.0.0",
+    "postcss-preset-env": "^7.5.0",
+    "prettier": "^2.6.2",
+    "progress-bar-webpack-plugin": "^2.1.0",
+    "sass": "^1.51.0",
+    "swc-loader": "^0.2.1",
+    "tailwindcss": "^3.1.8",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "@lottiefiles/lottie-player": "^1.7.1",
+    "@shopify/shopify-api": "^3.1.0",
+    "@shopify/theme-a11y": "^4.1.1",
+    "@shopify/theme-addresses": "^4.1.1",
+    "@shopify/theme-cart": "^4.1.1",
+    "@shopify/theme-currency": "^4.1.1",
+    "@shopify/theme-images": "^4.1.1",
+    "@shopify/theme-predictive-search": "^4.1.1",
+    "@shopify/theme-product": "^4.1.1",
+    "@shopify/theme-product-form": "^4.1.1",
+    "@shopify/theme-rte": "^4.1.1",
+    "@shopify/theme-sections": "^4.1.1",
+    "@splidejs/splide": "^4.1.1",
+    "es6-promise": "^4.2.8",
+    "postcss-import": "^14.1.0",
+    "sass-loader": "^12.6.0",
+    "unfetch": "^4.2.0"
+  },
+  "lint-staged": {
+    "*.{js,cjs,mjs}": "eslint --fix --cache --cache-location \"node_modules/.eslintcache\"",
+    "*.{js,css,scss,sass,mjs,cjs,md,json,jsonc}": "prettier --write"
+  }
+}

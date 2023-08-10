@@ -1,0 +1,18 @@
+@layer utilities {
+  .overflow-hidden-mobile,
+  .overflow-hidden-tablet {
+    @apply overflow-hidden;
+  }
+
+  .overflow-hidden-mobile {
+    @media screen sm {
+      @apply overflow-auto;
+    }
+  }
+
+  .overflow-hidden-tablet {
+    @media screen md {
+      @apply overflow-auto;
+    }
+  }
+}
