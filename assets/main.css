@@ -1013,46 +1013,29 @@ select {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.border-\[2px\] {
-  border-width: 2px;
-}
 .border {
   border-width: 1px;
-}
-.border-white {
-  --tw-border-opacity: 1;
-  border-color: rgba(255, 255, 255, var(--tw-border-opacity));
-}
-.border-border {
-  --tw-border-opacity: 1;
-  border-color: rgba(193, 193, 194, var(--tw-border-opacity));
-  border-color: rgb(var(--vf-color-border) / var(--tw-border-opacity));
 }
 .border-primary {
   --tw-border-opacity: 1;
   border-color: rgba(0, 0, 0, var(--tw-border-opacity));
   border-color: rgb(var(--vf-color-primary) / var(--tw-border-opacity));
 }
-.bg-primary {
-  --tw-bg-opacity: 1;
-  background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
-  background-color: rgb(var(--vf-color-primary) / var(--tw-bg-opacity));
-}
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
-}
-.py-24 {
-  padding-top: calc(24rem / 10);
-  padding-top: calc(24rem / var(--vf-font-size-root));
-  padding-bottom: calc(24rem / 10);
-  padding-bottom: calc(24rem / var(--vf-font-size-root));
 }
 .px-20 {
   padding-left: calc(20rem / 10);
   padding-left: calc(20rem / var(--vf-font-size-root));
   padding-right: calc(20rem / 10);
   padding-right: calc(20rem / var(--vf-font-size-root));
+}
+.py-24 {
+  padding-top: calc(24rem / 10);
+  padding-top: calc(24rem / var(--vf-font-size-root));
+  padding-bottom: calc(24rem / 10);
+  padding-bottom: calc(24rem / var(--vf-font-size-root));
 }
 .py-8 {
   padding-top: calc(8rem / 10);
@@ -1085,11 +1068,11 @@ select {
   line-height: calc(48rem / 10);
   line-height: var(--vf-line-height-display);
 }
-.font-normal {
-  font-weight: 400;
-}
 .font-bold {
   font-weight: 700;
+}
+.font-normal {
+  font-weight: 400;
 }
 .uppercase {
   text-transform: uppercase;
@@ -1099,15 +1082,6 @@ select {
 }
 .italic {
   font-style: italic;
-}
-.text-copy {
-  --tw-text-opacity: 1;
-  color: rgba(51, 51, 51, var(--tw-text-opacity));
-  color: rgb(var(--vf-color-copy) / var(--tw-text-opacity));
-}
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 .text-primary {
   --tw-text-opacity: 1;
