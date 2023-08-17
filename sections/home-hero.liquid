@@ -48,13 +48,13 @@
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'subheading' -%}
-            <h6 class="mb-8 {{ text_center }}">{{ block.settings.text }}</h6>
+            <h6 class="mb-2 {{ text_center }}">{{ block.settings.text }}</h6>
           {%- when 'heading' -%}
-            <h1 class="text-display font-display font-normal {{ text_center }}">{{ block.settings.text }}</h1>
+            <h1 class="{{ text_center }}">{{ block.settings.text }}</h1>
           {%- when 'body' -%}
-            <p class="mt-8 lg:mt-24 text-body-copy-large {{ text_center }}">{{ block.settings.text }}</p>
+            <p class="mt-2 lg:mt-6 text-body-copy-large {{ text_center }}">{{ block.settings.text }}</p>
           {%- when 'cta' -%}
-            <div class="mt-20 lg:mt-28 {{ button_align }}">
+            <div class="mt-5 lg:mt-7 {{ button_align }}">
               {%- render 'button', url: block.settings.url, text: block.settings.text -%}
             </div>
         {%- endcase -%}
