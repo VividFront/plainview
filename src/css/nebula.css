@@ -9,30 +9,6 @@
   ::after {
     --vf-font-size-root: 10;
 
-    --vf-font-size-display: calc(44rem / var(--vf-font-size-root));
-    --vf-font-size-h1: calc(40rem / var(--vf-font-size-root));
-    --vf-font-size-h2: calc(32rem / var(--vf-font-size-root));
-    --vf-font-size-h3: calc(20rem / var(--vf-font-size-root));
-    --vf-font-size-h4: calc(18rem / var(--vf-font-size-root));
-    --vf-font-size-h5: calc(17rem / var(--vf-font-size-root));
-    --vf-font-size-h6: calc(16rem / var(--vf-font-size-root));
-    --vf-font-size-body-copy: calc(15rem / var(--vf-font-size-root));
-    --vf-font-size-body-copy-small: calc(13rem / var(--vf-font-size-root));
-    --vf-font-size-body-copy-large: calc(16rem / var(--vf-font-size-root));
-    --vf-font-size-nav: calc(18rem / var(--vf-font-size-root));
-
-    --vf-line-height-display: calc(48rem / var(--vf-font-size-root));
-    --vf-line-height-h1: calc(44rem / var(--vf-font-size-root));
-    --vf-line-height-h2: calc(36rem / var(--vf-font-size-root));
-    --vf-line-height-h3: calc(26rem / var(--vf-font-size-root));
-    --vf-line-height-h4: calc(24rem / var(--vf-font-size-root));
-    --vf-line-height-h5: calc(24rem / var(--vf-font-size-root));
-    --vf-line-height-h6: calc(24rem / var(--vf-font-size-root));
-    --vf-line-height-body-copy: calc(22rem / var(--vf-font-size-root));
-    --vf-line-height-body-copy-small: calc(18rem / var(--vf-font-size-root));
-    --vf-line-height-body-copy-large: calc(24rem / var(--vf-font-size-root));
-    --vf-line-height-nav: calc(24rem / var(--vf-font-size-root));
-
     --vf-font-family-display: 'playfair-display', Times, serif;
     --vf-font-family-heading: 'Quasimoda', Helvetica, sans-serif;
     --vf-font-family-body: 'Quasimoda', Helvetica, sans-serif;
@@ -86,9 +62,6 @@
 
     --vf-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 
-    /* Border */
-    --vf-border-radius: 4px;
-
     /* Grid */
     --vf-grid-cols-default: repeat(6, minmax(0, 1fr));
     --vf-grid-gap: 16px;
@@ -116,28 +89,6 @@
     :root,
     ::before,
     ::after {
-      --vf-font-size-display: calc(72rem / var(--vf-font-size-root));
-      --vf-font-size-h1: calc(56rem / var(--vf-font-size-root));
-      --vf-font-size-h2: calc(44rem / var(--vf-font-size-root));
-      --vf-font-size-h3: calc(32rem / var(--vf-font-size-root));
-      --vf-font-size-h4: calc(24rem / var(--vf-font-size-root));
-      --vf-font-size-h5: calc(20rem / var(--vf-font-size-root));
-      --vf-font-size-h6: calc(18rem / var(--vf-font-size-root));
-      --vf-font-size-body-copy: calc(16rem / var(--vf-font-size-root));
-      --vf-font-size-body-copy-small: calc(14rem / var(--vf-font-size-root));
-      --vf-font-size-body-copy-large: calc(18rem / var(--vf-font-size-root));
-
-      --vf-line-height-display: calc(68rem / var(--vf-font-size-root));
-      --vf-line-height-h1: calc(64rem / var(--vf-font-size-root));
-      --vf-line-height-h2: calc(48rem / var(--vf-font-size-root));
-      --vf-line-height-h3: calc(38rem / var(--vf-font-size-root));
-      --vf-line-height-h4: calc(29rem / var(--vf-font-size-root));
-      --vf-line-height-h5: calc(28rem / var(--vf-font-size-root));
-      --vf-line-height-h6: calc(26rem / var(--vf-font-size-root));
-      --vf-line-height-body-copy: calc(24rem / var(--vf-font-size-root));
-      --vf-line-height-body-copy-small: calc(24rem / var(--vf-font-size-root));
-      --vf-line-height-body-copy-large: calc(28rem / var(--vf-font-size-root));
-
       --vf-padding-section-xsmall: calc(16rem / var(--vf-font-size-root)) 0;
       --vf-padding-section-small: calc(48rem / var(--vf-font-size-root)) 0
         calc(56rem / var(--vf-font-size-root));
@@ -175,46 +126,39 @@
   }
 
   body {
-    font-size: var(--vf-font-size-body-copy);
-    line-height: var(--vf-line-height-body-copy);
+    @apply text-base;
     font-family: var(--vf-font-family-body);
     color: rgb(var(--vf-color-copy));
   }
 
   h1,
   .h1 {
-    font-size: var(--vf-font-size-h1);
-    line-height: var(--vf-line-height-h1);
+    @apply text-4xl lg:text-5xl;
   }
 
   h2,
   .h2 {
-    font-size: var(--vf-font-size-h2);
-    line-height: var(--vf-line-height-h2);
+    @apply text-3xl lg:text-4xl;
   }
-
+  
   h3,
   .h3 {
-    font-size: var(--vf-font-size-h3);
-    line-height: var(--vf-line-height-h3);
+    @apply text-2xl lg:text-3xl;
   }
-
+  
   h4,
   .h4 {
-    font-size: var(--vf-font-size-h4);
-    line-height: var(--vf-line-height-h4);
+    @apply text-lg lg:text-2xl;
   }
-
+  
   h5,
   .h5 {
-    font-size: var(--vf-font-size-h5);
-    line-height: var(--vf-line-height-h5);
+    @apply text-lg lg:text-xl;
   }
-
+  
   h6,
   .h6 {
-    font-size: var(--vf-font-size-h6);
-    line-height: var(--vf-line-height-h6);
+    @apply text-base lg:text-lg;
   }
 
   h1,
