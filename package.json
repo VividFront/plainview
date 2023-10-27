@@ -9,13 +9,13 @@
   },
   "scripts": {
     "build": "webpack",
-    "dev": "concurrently --raw \"npm:webpack:watch\" \"npm:shopify:serve\"",
+    "dev": "concurrently \"npm:webpack:watch\" \"npm:shopify:serve\"",
     "watch": "npm run dev",
     "prepare": "husky install",
     "switch": "npm run shopify:switch",
     "lint": "eslint --fix --cache --cache-location \"node_modules/.eslintcache\" src/**/*.{js,mjs,cjs} && npm run format && shopify theme check -a",
     "format": "prettier --write src/**/*",
-    "webpack:watch": "webpack watch",
+    "webpack:watch": "webpack watch --no-stats",
     "webpack:build": "webpack --mode production",
     "shopify:switch": "cross-var shopify auth logout && shopify theme list -s $npm_package_config_store",
     "shopify:serve": "cross-var shopify theme dev --port $npm_package_config_port"
@@ -64,7 +64,8 @@
     "swc-loader": "^0.2.3",
     "tailwindcss": "^3.3.3",
     "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-messages": "^2.0.4"
   },
   "dependencies": {
     "@lottiefiles/lottie-player": "^2.0.2",

@@ -6,6 +6,7 @@ const webpack = require('webpack');
 // Plugins
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const WebpackMessages = require('webpack-messages');
 
 // PostCSS Plugins
 const tailwindcss = require('tailwindcss');
@@ -35,6 +36,7 @@ module.exports = {
       jQuery: 'jquery',
     }),
     new ProgressBarPlugin(),
+    new WebpackMessages(),
   ],
   module: {
     rules: [
@@ -59,12 +61,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [
-                  postcssImport(),
-                  tailwindcss(),
-                  postcssPresetEnv(),
-                  autoprefixer(),
-                ],
+                plugins: [postcssImport(), tailwindcss(), postcssPresetEnv(), autoprefixer()],
               },
             },
           },
