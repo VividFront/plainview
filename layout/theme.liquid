@@ -295,5 +295,15 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    <script>
+  // If using Online Store 2.0, you may need to use {{ cart | json }} in a section file
+  {% if cart %}
+    // For classic themes:
+    console.log("Cart ID (token):", "{{ cart.token }}");
+    // If you have access to the Storefront API cart GID, you can output it here.
+    // Otherwise, you can use the token to look up the cart via the API.
+  {% endif %}
+</script>
   </body>
 </html>
