@@ -295,6 +295,15 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-
+<script>
+  fetch('/cart.js')
+    .then(response => response.json())
+    .then(cart => {
+      console.log('Cart ID:', cart.id);
+      console.log('Cart Token:', cart.token);
+      console.log('Full cart object:', cart);
+    })
+    .catch(error => console.error('Error fetching cart:', error));
+</script>
   </body>
 </html>
